@@ -19,7 +19,7 @@ app.service('parseService', function($http){
   
   //postData method here
 
-    this.postData = function() {
+    this.postData = function(yourMessage) {
       return $http({
         method: 'POST',
         url: 'https://api.parse.com/1/classes/chat',
