@@ -19,14 +19,20 @@ app.service('parseService', function($http, $q){
   
   //postData method here
 
-    this.postData = function(newMessage) {
-      return $http({
-        method: 'POST',
-        url: 'https://api.parse.com/1/classes/chat',
-        data: {
-          'text': newMessage
-        }
-      })
+    // this.postData = function(newMessage) {
+    //   return $http({
+    //     method: 'POST',
+    //     url: 'https://api.parse.com/1/classes/chat',
+    //     data: {
+    //       'text': newMessage
+    //     }
+    //   })
+    // }
+
+    // Option below is the same as the one above (shorthand)
+
+    this.postData = function (newMessage) {
+      return $http.post('https://api.parse.com/1/classes/chat', {text: newMessage});
     }
   
   
